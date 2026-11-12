@@ -11,7 +11,7 @@ function Root() {
   const [lang, setLangState] = useState(getLang)
   useEffect(() => onLangChange(setLangState), [])
   return (
-    <BrowserRouter key={lang}>
+    <BrowserRouter key={lang} basename={import.meta.env.BASE_URL.replace(/\/$/, '')}>
       <App />
     </BrowserRouter>
   )
